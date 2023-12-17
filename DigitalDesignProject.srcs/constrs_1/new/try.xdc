@@ -15,5 +15,17 @@ set_property PACKAGE_PIN J3 [get_ports {light[5]}]
 set_property PACKAGE_PIN J2 [get_ports {light[6]}]
 set_property PACKAGE_PIN K2 [get_ports {light[7]}]
 set_property PACKAGE_PIN P17 [get_ports clk]
-set_property PACKAGE_PIN T1 [get_ports speaker]
 set_property IOSTANDARD LVCMOS33 [get_ports *]
+
+set_property PACKAGE_PIN T1 [get_ports zero]
+set_property PACKAGE_PIN H17 [get_ports speaker]
+
+set_property PACKAGE_PIN V1 [get_ports low_button]
+set_property PACKAGE_PIN R11 [get_ports high_button]
+
+set_property PACKAGE_PIN U4 [get_ports mode_switch]
+set_property PACKAGE_PIN P15 [get_ports rst]
+set_property PACKAGE_PIN K1 [get_ports {mode_light[0]}]
+set_property PACKAGE_PIN H6 [get_ports {mode_light[1]}]
+set_property PACKAGE_PIN H5 [get_ports {mode_light[2]}]
+

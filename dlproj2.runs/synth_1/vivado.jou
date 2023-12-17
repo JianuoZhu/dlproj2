@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sun Dec 17 21:32:33 2023
+# Process ID: 6432
+# Current directory: E:/OneDrive/Code/FPGA/dlproj2/dlproj2.runs/synth_1
+# Command line: vivado.exe -log Controller.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Controller.tcl
+# Log file: E:/OneDrive/Code/FPGA/dlproj2/dlproj2.runs/synth_1/Controller.vds
+# Journal file: E:/OneDrive/Code/FPGA/dlproj2/dlproj2.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Controller.tcl -notrace

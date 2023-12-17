@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sun Dec 17 15:55:32 2023
+# Process ID: 17916
+# Current directory: E:/OneDrive/Code/FPGA/dlproj2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4132 E:\OneDrive\Code\FPGA\dlproj2\dlproj2.xpr
+# Log file: E:/OneDrive/Code/FPGA/dlproj2/vivado.log
+# Journal file: E:/OneDrive/Code/FPGA/dlproj2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/OneDrive/Code/FPGA/dlproj2/dlproj2.xpr
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+add_files {E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Controller.v E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Buzz1.v E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Buzz0.v E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/buzz.v E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Buzzer1.v}
+update_compile_order -fileset sources_1
