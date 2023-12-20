@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-| Date         : Wed Dec 20 23:10:39 2023
+| Date         : Thu Dec 21 00:11:43 2023
 | Host         : JianuoLegion running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file Controller_timing_summary_routed.rpt -rpx Controller_timing_summary_routed.rpx -warn_on_violation
 | Design       : Controller
@@ -52,21 +52,25 @@ Table of Contents
 
 1. checking no_clock
 --------------------
- There are 249 register/latch pins with no clock driven by root clock pin: clk (HIGH)
+ There are 290 register/latch pins with no clock driven by root clock pin: clk (HIGH)
 
- There are 3 register/latch pins with no clock driven by root clock pin: learn_mode/index_reg[1]/Q (HIGH)
+ There is 1 register/latch pin with no clock driven by root clock pin: auto_mode/index_reg[0]/Q (HIGH)
 
- There are 3 register/latch pins with no clock driven by root clock pin: learn_mode/index_reg[2]/Q (HIGH)
+ There is 1 register/latch pin with no clock driven by root clock pin: auto_mode/index_reg[1]/Q (HIGH)
 
- There are 3 register/latch pins with no clock driven by root clock pin: learn_mode/index_reg[3]/Q (HIGH)
+ There is 1 register/latch pin with no clock driven by root clock pin: auto_mode/index_reg[2]/Q (HIGH)
 
- There are 3 register/latch pins with no clock driven by root clock pin: learn_mode/index_reg[4]/Q (HIGH)
+ There is 1 register/latch pin with no clock driven by root clock pin: auto_mode/index_reg[3]/Q (HIGH)
 
- There are 3 register/latch pins with no clock driven by root clock pin: learn_mode/index_reg[5]/Q (HIGH)
+ There is 1 register/latch pin with no clock driven by root clock pin: auto_mode/index_reg[4]/Q (HIGH)
 
- There are 3 register/latch pins with no clock driven by root clock pin: learn_mode/index_reg[6]/Q (HIGH)
+ There is 1 register/latch pin with no clock driven by root clock pin: auto_mode/index_reg[5]/Q (HIGH)
 
- There are 3 register/latch pins with no clock driven by root clock pin: learn_mode/index_reg[7]/Q (HIGH)
+ There is 1 register/latch pin with no clock driven by root clock pin: auto_mode/index_reg[6]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: auto_mode/index_reg[7]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: auto_mode/music_reg[0]/Q (HIGH)
 
  There are 3 register/latch pins with no clock driven by root clock pin: pat/current_mode_reg[0]/Q (HIGH)
 
@@ -85,7 +89,7 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 481 pins that are not constrained for maximum delay. (HIGH)
+ There are 595 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 

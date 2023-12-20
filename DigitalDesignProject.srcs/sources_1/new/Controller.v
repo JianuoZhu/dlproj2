@@ -44,7 +44,7 @@ module Controller(
     wire en_mode1, en_mode2, en_mode3;
     wire [3:0]  learn_note;
     reg [3:0] speaker_note, free_note;
-    wire auto_note;
+    wire [3:0]auto_note;
     wire [7:0] light_learn;
     reg [7:0] light_free;
     wire [7:0] light_auto;
@@ -93,16 +93,17 @@ module Controller(
         else if(mode_light==3'b100) begin
             light<=light_auto;
             display_segments<=segments_auto;
-            speaker_note<=auto_note;
+            speaker_note <= auto_note;
             speaker_low <= auto_low;
             speaker_high <= auto_high;
         end
     end
     wire finished;
-    Learn learn_mode(.enable(en_mode2),.clk(clk),.rst_n(rst),.note(free_note),.music(3'b000),.max_index(7'b0000100),.light(light_learn),.low_light(low_light),.high_light(high_light),.segments(segments_learn),.finished(finished), .speaker_note(learn_note));
+    Learn learn_mode(.enable(en_mode2),.clk(clk),.rst_n(rst),.note(free_note),.music(3'b000),.max_index(7'b0001010),.light(light_learn),.low_light(low_light),.high_light(high_light),.segments(segments_learn),.finished(finished), .speaker_note(learn_note));
     wire switch_song;
     assign switch_song = 0;
-    auto_play auto_mode(.enable(en_mode3),.clk(clk),.rst(rst),.switch_song(debounced_song_switch),.seg_out(1),.seg_ctrl(segments_auto),.led(light_auto),.note(auto_note), .low(auto_low), .high(auto_high));
+    wire tub_sel_2;
+    auto_play auto_mode(.enable(en_mode3),.clk(clk),.rst(rst),.switch_song(debounced_song_switch),.seg_out(tub_sel_2),.seg_ctrl(segments_auto),.led(light_auto),.note(auto_note), .low(auto_low), .high(auto_high));
 endmodule
 
 module patterns(

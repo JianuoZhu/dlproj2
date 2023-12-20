@@ -2,7 +2,7 @@ module Learn(
     input enable,
     input clk,
     input rst_n,
-    input note,
+    input [3:0]note,
     input [2:0]music,
     input [7:0]max_index,
     output reg [7:0] light,

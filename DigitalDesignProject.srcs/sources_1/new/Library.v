@@ -33,9 +33,9 @@ output reg high=1'b0
           case (index)
             8'b0000_0000: note = 4'b0001; 
             8'b0000_0001: note = 4'b0001;  
-            8'b0000_0010: note = 4'b0001;
-            8'b0000_0011: note = 4'b0001; 
-            8'b0000_0100: note = 4'b0001;
+            8'b0000_0010: note = 4'b0101;
+            8'b0000_0011: note = 4'b0101; 
+            8'b0000_0100: note = 4'b0110;
             8'b0000_0101: note = 4'b0110;
             8'b0000_0110: note = 4'b0101;
 
@@ -78,6 +78,7 @@ output reg high=1'b0
             8'b0010_0111: note = 4'b0010;
             8'b0010_1000: note = 4'b0010;
             8'b0010_1001: note = 4'b0001;
+            default: note = 4'b0000;
           endcase
 
         2'b01:
@@ -128,6 +129,7 @@ output reg high=1'b0
                             low=1'b0;
                              note = 4'b0001;
                          end
+            default: note = 4'b0000;
            endcase
       endcase
     end    
