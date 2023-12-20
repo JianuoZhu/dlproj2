@@ -24,19 +24,39 @@ module Controller(
     input[7:0] inputs,
     input low_button,
     input high_button,
-    input  clk,
+    input clk,
     input rst,
     input mode_switch,
+    input song_switch,
     output [2:0] mode_light,
     output wire speaker,
-    output reg [7:0] light
+    output reg [7:0] light,
+    output reg [7:0] display_segments,
+    output tub_sel,
+    output low_light,
+    output high_light,
+    output zero
 );
+                                                                     
+    assign tub_sel=1'b1;
+    assign zero=1'b0;
     wire [2:0] mode;
     wire en_mode1, en_mode2, en_mode3;
-    reg [3:0] note;
+    wire [3:0]  learn_note;
+    reg [3:0] speaker_note, free_note;
+    wire auto_note;
+    wire [7:0] light_learn;
+    reg [7:0] light_free;
+    wire [7:0] light_auto;
+    wire [7:0] segments_learn;
+    wire [7:0] segments_auto;
+    wire debounced_song_switch;
+    wire auto_low, auto_high;
+    reg speaker_low, speaker_high;
+    Debounce debounce_song_switch(.clk(clk), .button_in(song_switch), .button_out(debounced_song_switch));
     //连接模式选择
     patterns pat(.clk(clk),.rst(rst),.mode_switch(mode_switch),.mode_light(mode_light),.en_mode1(en_mode1),.en_mode2(en_mode2),.en_mode3(en_mode3));
-    Buzzer buzzer(.clk(clk), .note(note), .button_low_tone(low_button), .button_high_tone(high_button), .speaker(speaker));
+    Buzzer buzzer(.clk(clk), .note(speaker_note), .button_low_tone(speaker_low), .button_high_tone(speaker_high), .speaker(speaker));
     
     wire[7:0] keys [7:0];
     assign keys[0] = 8'b00000000;
@@ -49,18 +69,40 @@ module Controller(
     assign keys[7] = 8'b01000000;  
     
     integer i;
-    
     always @(posedge clk) begin
-    for(i=0;i<8;i=i+1)
-    begin
-        if(keys[i]==inputs)
+        for(i=0;i<8;i=i+1)
         begin
-            note<= i;
-            light<=keys[i];
+            if(keys[i]==inputs)
+            begin
+                free_note <= i;
+                light_free<=keys[i];
+            end
+        end
+        if(mode_light==3'b001) begin
+            light<=light_free;
+            speaker_note<=free_note;
+            display_segments <= 8'b0000_0000;
+            speaker_low <= low_button;
+            speaker_high <= high_button;
+        end
+        else if(mode_light==3'b010) begin
+            light<=light_learn;
+            display_segments<=segments_learn;
+            speaker_note<=learn_note;
+        end
+        else if(mode_light==3'b100) begin
+            light<=light_auto;
+            display_segments<=segments_auto;
+            speaker_note<=auto_note;
+            speaker_low <= auto_low;
+            speaker_high <= auto_high;
         end
     end
-    end
-            
+    wire finished;
+    Learn learn_mode(.enable(en_mode2),.clk(clk),.rst_n(rst),.note(free_note),.music(3'b000),.max_index(7'b0000100),.light(light_learn),.low_light(low_light),.high_light(high_light),.segments(segments_learn),.finished(finished), .speaker_note(learn_note));
+    wire switch_song;
+    assign switch_song = 0;
+    auto_play auto_mode(.enable(en_mode3),.clk(clk),.rst(rst),.switch_song(debounced_song_switch),.seg_out(1),.seg_ctrl(segments_auto),.led(light_auto),.note(auto_note), .low(auto_low), .high(auto_high));
 endmodule
 
 module patterns(
@@ -79,7 +121,8 @@ output reg [2:0] mode_light
     reg flag;
     wire debounced_mode_switch;
     Debounce debounce_mode_switch(.clk(clk), .button_in(mode_switch), .button_out(debounced_mode_switch));
-    always @(posedge clk or negedge rst) begin
+    //assign debounced_mode_switch = mode_switch;
+    always @(posedge clk , negedge rst) begin
         if (!rst) begin
             current_mode <= MODE_1;
             flag <= 1'b0;

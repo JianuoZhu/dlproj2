@@ -1,0 +1,13 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Buzzer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Buzzer
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Controller
+INFO: [VRFC 10-311] analyzing module patterns
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Learning_Mode.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Learn
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Library.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lib
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/debounce.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Debounce
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/OneDrive/Code/FPGA/dlproj2/dlproj2.srcs/sim_1/new/sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sim

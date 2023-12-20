@@ -1,0 +1,11 @@
+0.6
+2017.4
+Dec 15 2017
+21:07:18
+E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Buzzer.v,1702824533,verilog,,E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Controller.v,,Buzzer,,,,,,,,
+E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Controller.v,1703074270,verilog,,E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Learning_Mode.v,,Controller;patterns,,,,,,,,
+E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Learning_Mode.v,1703072622,verilog,,E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Library.v,,Learn,,,,,,,,
+E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Library.v,1702975021,verilog,,E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/debounce.v,,lib,,,,,,,,
+E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/debounce.v,1702814580,verilog,,E:/OneDrive/Code/FPGA/dlproj2/dlproj2.srcs/sim_1/new/sim.v,,Debounce,,,,,,,,
+E:/OneDrive/Code/FPGA/dlproj2/dlproj2.sim/sim_1/behav/xsim/glbl.v,1513215259,verilog,,,,glbl,,,,,,,,
+E:/OneDrive/Code/FPGA/dlproj2/dlproj2.srcs/sim_1/new/sim.v,1703072227,verilog,,,,sim,,,,,,,,

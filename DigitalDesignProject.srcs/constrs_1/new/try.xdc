@@ -29,3 +29,19 @@ set_property PACKAGE_PIN K1 [get_ports {mode_light[0]}]
 set_property PACKAGE_PIN H6 [get_ports {mode_light[1]}]
 set_property PACKAGE_PIN H5 [get_ports {mode_light[2]}]
 
+
+set_property PACKAGE_PIN M1 [get_ports low_light]
+set_property PACKAGE_PIN K3 [get_ports high_light]
+
+set_property PACKAGE_PIN G2 [get_ports tub_sel]
+
+set_property PACKAGE_PIN D5 [get_ports {display_segments[0]}]
+set_property PACKAGE_PIN B2 [get_ports {display_segments[1]}]
+set_property PACKAGE_PIN B3 [get_ports {display_segments[2]}]
+set_property PACKAGE_PIN A1 [get_ports {display_segments[3]}]
+set_property PACKAGE_PIN B1 [get_ports {display_segments[4]}]
+set_property PACKAGE_PIN A3 [get_ports {display_segments[5]}]
+set_property PACKAGE_PIN A4 [get_ports {display_segments[6]}]
+set_property PACKAGE_PIN B4 [get_ports {display_segments[7]}]
+
+set_property PACKAGE_PIN R17 [get_ports song_switch]

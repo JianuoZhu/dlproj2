@@ -14,28 +14,61 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 40324 
+INFO: Helper process launched with PID 72744 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 330.078 ; gain = 100.121
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 330.988 ; gain = 101.148
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'Controller' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Controller.v:23]
-INFO: [Synth 8-638] synthesizing module 'patterns' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Controller.v:66]
-	Parameter MODE_1 bound to: 2'b00 
-	Parameter MODE_2 bound to: 2'b01 
-	Parameter MODE_3 bound to: 2'b10 
 INFO: [Synth 8-638] synthesizing module 'Debounce' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/debounce.v:1]
 	Parameter DEBOUNCE_INTERVAL bound to: 1000000 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Debounce' (1#1) [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/debounce.v:1]
-INFO: [Synth 8-155] case statement is not full and has no default [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Controller.v:104]
-INFO: [Synth 8-256] done synthesizing module 'patterns' (2#1) [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Controller.v:66]
+INFO: [Synth 8-638] synthesizing module 'patterns' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Controller.v:108]
+	Parameter MODE_1 bound to: 2'b00 
+	Parameter MODE_2 bound to: 2'b01 
+	Parameter MODE_3 bound to: 2'b10 
+INFO: [Synth 8-155] case statement is not full and has no default [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Controller.v:147]
+INFO: [Synth 8-256] done synthesizing module 'patterns' (2#1) [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Controller.v:108]
 INFO: [Synth 8-638] synthesizing module 'Buzzer' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Buzzer.v:23]
 WARNING: [Synth 8-3848] Net notes1[0] in module/entity Buzzer does not have driver. [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Buzzer.v:30]
 WARNING: [Synth 8-3848] Net notes0[0] in module/entity Buzzer does not have driver. [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Buzzer.v:31]
 WARNING: [Synth 8-3848] Net notes2[0] in module/entity Buzzer does not have driver. [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Buzzer.v:32]
 INFO: [Synth 8-256] done synthesizing module 'Buzzer' (3#1) [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Buzzer.v:23]
-INFO: [Synth 8-256] done synthesizing module 'Controller' (4#1) [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Controller.v:23]
+INFO: [Synth 8-638] synthesizing module 'Learn' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Learning_Mode.v:1]
+	Parameter A_segment bound to: 8'b11101110 
+	Parameter B_segment bound to: 8'b00111110 
+	Parameter C_segment bound to: 8'b10011100 
+	Parameter D_segment bound to: 8'b01111010 
+	Parameter E_segment bound to: 8'b10011110 
+	Parameter WAITING bound to: 2'b00 
+	Parameter PLAYING bound to: 2'b01 
+	Parameter FINISHED bound to: 2'b10 
+	Parameter zeros bound to: 7'b0000000 
+	Parameter a_sec bound to: 100000000 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'lib' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Library.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Library.v:33]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Library.v:84]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Library.v:31]
+INFO: [Synth 8-256] done synthesizing module 'lib' (4#1) [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Library.v:23]
+WARNING: [Synth 8-689] width (3) of port connection 'music' does not match port width (2) of module 'lib' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Learning_Mode.v:30]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Learning_Mode.v:44]
+WARNING: [Synth 8-5788] Register light_reg in module Learn is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Learning_Mode.v:50]
+WARNING: [Synth 8-5788] Register speaker_note_reg in module Learn is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Learning_Mode.v:70]
+INFO: [Synth 8-256] done synthesizing module 'Learn' (5#1) [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Learning_Mode.v:1]
+WARNING: [Synth 8-689] width (4) of port connection 'note' does not match port width (1) of module 'Learn' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Controller.v:102]
+INFO: [Synth 8-638] synthesizing module 'auto_play' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v:1]
+	Parameter TIME bound to: 50000000 - type: integer 
+WARNING: [Synth 8-689] width (3) of port connection 'music' does not match port width (2) of module 'lib' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v:19]
+WARNING: [Synth 8-5788] Register led_reg in module auto_play is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v:46]
+INFO: [Synth 8-256] done synthesizing module 'auto_play' (6#1) [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v:1]
+WARNING: [Synth 8-689] width (32) of port connection 'seg_out' does not match port width (1) of module 'auto_play' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Controller.v:105]
+WARNING: [Synth 8-2900] ignoring illegal expression in output port connection [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Controller.v:105]
+WARNING: [Synth 8-689] width (1) of port connection 'note' does not match port width (4) of module 'auto_play' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Controller.v:105]
+INFO: [Synth 8-256] done synthesizing module 'Controller' (7#1) [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Controller.v:23]
+WARNING: [Synth 8-3917] design Controller has port tub_sel driven by constant 1
+WARNING: [Synth 8-3917] design Controller has port zero driven by constant 0
+WARNING: [Synth 8-3331] design Learn has unconnected port music[2]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 382.508 ; gain = 152.551
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 383.172 ; gain = 153.332
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -45,7 +78,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 382.508 ; gain = 152.551
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 383.172 ; gain = 153.332
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a35tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -53,9 +86,6 @@ INFO: [Project 1-570] Preparing netlist for logic optimization
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/constrs_1/new/try.xdc]
-WARNING: [Vivado 12-584] No ports matched 'zero'. [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/constrs_1/new/try.xdc:20]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/constrs_1/new/try.xdc:20]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/constrs_1/new/try.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/constrs_1/new/try.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Controller_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/Controller_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
@@ -64,30 +94,40 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 711.477 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 714.637 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:14 . Memory (MB): peak = 711.477 ; gain = 481.520
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:15 . Memory (MB): peak = 714.637 ; gain = 484.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:14 . Memory (MB): peak = 711.477 ; gain = 481.520
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:15 . Memory (MB): peak = 714.637 ; gain = 484.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:14 . Memory (MB): peak = 711.477 ; gain = 481.520
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:15 . Memory (MB): peak = 714.637 ; gain = 484.797
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Buzzer.v:86]
-WARNING: [Synth 8-327] inferring latch for variable 'en_mode1_reg' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Controller.v:108]
-WARNING: [Synth 8-327] inferring latch for variable 'en_mode2_reg' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Controller.v:109]
-WARNING: [Synth 8-327] inferring latch for variable 'en_mode3_reg' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Controller.v:110]
-WARNING: [Synth 8-327] inferring latch for variable 'mode_light_reg' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Controller.v:107]
+INFO: [Synth 8-5546] ROM "note" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "note" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "low" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element wrong_counter_reg was removed.  [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Learning_Mode.v:38]
+WARNING: [Synth 8-6014] Unused sequential element index_reg was removed.  [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Learning_Mode.v:30]
+INFO: [Synth 8-5544] ROM "seg_ctrl" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "light" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "display_segments" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+WARNING: [Synth 8-327] inferring latch for variable 'en_mode1_reg' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Controller.v:151]
+WARNING: [Synth 8-327] inferring latch for variable 'en_mode2_reg' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Controller.v:152]
+WARNING: [Synth 8-327] inferring latch for variable 'en_mode3_reg' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Controller.v:153]
+WARNING: [Synth 8-327] inferring latch for variable 'mode_light_reg' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Controller.v:150]
+WARNING: [Synth 8-327] inferring latch for variable 'note_reg' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Library.v:34]
+WARNING: [Synth 8-327] inferring latch for variable 'low_reg' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Library.v:115]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:14 . Memory (MB): peak = 711.477 ; gain = 481.520
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:15 . Memory (MB): peak = 714.637 ; gain = 484.797
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -100,29 +140,50 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     20 Bit       Adders := 3     
+	   2 Input     27 Bit       Adders := 1     
+	   2 Input     26 Bit       Adders := 1     
+	   2 Input     20 Bit       Adders := 5     
+	   2 Input      8 Bit       Adders := 3     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
-	               32 Bit    Registers := 1     
-	               20 Bit    Registers := 7     
+	               32 Bit    Registers := 3     
+	               20 Bit    Registers := 9     
 	               19 Bit    Registers := 3     
-	                8 Bit    Registers := 1     
-	                4 Bit    Registers := 1     
-	                2 Bit    Registers := 2     
-	                1 Bit    Registers := 8     
+	                8 Bit    Registers := 9     
+	                4 Bit    Registers := 3     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 17    
 +---Muxes : 
-	   4 Input     32 Bit        Muxes := 1     
-	   2 Input     20 Bit        Muxes := 9     
+	   4 Input     32 Bit        Muxes := 2     
+	   2 Input     27 Bit        Muxes := 1     
+	   2 Input     26 Bit        Muxes := 1     
+	   2 Input     20 Bit        Muxes := 15    
 	   4 Input     20 Bit        Muxes := 4     
 	   4 Input     19 Bit        Muxes := 3     
+	   4 Input      8 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 6     
 	   8 Input      8 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 1     
+	   3 Input      8 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 4     
+	   8 Input      7 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 4     
+	  32 Input      4 Bit        Muxes := 2     
+	  45 Input      4 Bit        Muxes := 2     
+	   3 Input      4 Bit        Muxes := 1     
 	   4 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
 	   8 Input      3 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 1     
 	   4 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 2     
-	   4 Input      1 Bit        Muxes := 2     
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 20    
+	   4 Input      1 Bit        Muxes := 9     
+	  32 Input      1 Bit        Muxes := 4     
+	  45 Input      1 Bit        Muxes := 2     
+	  35 Input      1 Bit        Muxes := 2     
 	   9 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -133,15 +194,20 @@ Hierarchical RTL Component report
 Module Controller 
 Detailed RTL Component Info : 
 +---Registers : 
-	                8 Bit    Registers := 1     
-	                4 Bit    Registers := 1     
+	                8 Bit    Registers := 3     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
 +---Muxes : 
 	   8 Input      8 Bit        Muxes := 1     
-	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 3     
+	   3 Input      8 Bit        Muxes := 1     
+	   3 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
 	   8 Input      3 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 11    
 	   9 Input      1 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
 Module Debounce 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -173,6 +239,56 @@ Detailed RTL Component Info :
 	   4 Input     32 Bit        Muxes := 1     
 	   4 Input     20 Bit        Muxes := 4     
 	   4 Input     19 Bit        Muxes := 3     
+Module lib 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 1     
+	  32 Input      4 Bit        Muxes := 1     
+	  45 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+	  32 Input      1 Bit        Muxes := 2     
+	  45 Input      1 Bit        Muxes := 1     
+	  35 Input      1 Bit        Muxes := 1     
+Module Learn 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     27 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 2     
+	   2 Input      7 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 4     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input     27 Bit        Muxes := 1     
+	   4 Input      8 Bit        Muxes := 2     
+	   2 Input      7 Bit        Muxes := 3     
+	   8 Input      7 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   5 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 7     
+	   2 Input      1 Bit        Muxes := 3     
+Module auto_play 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     26 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     26 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 3     
+	   2 Input      7 Bit        Muxes := 1     
+	   8 Input      7 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -188,117 +304,231 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-6014] Unused sequential element counter_reg was removed.  [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Buzzer.v:86]
+WARNING: [Synth 8-6014] Unused sequential element index_reg was removed.  [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Learning_Mode.v:30]
+WARNING: [Synth 8-6014] Unused sequential element wrong_counter_reg was removed.  [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Learning_Mode.v:38]
 INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "p_0_out" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-6014] Unused sequential element buzzer/counter_reg was removed.  [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Buzzer.v:86]
+WARNING: [Synth 8-3917] design Controller has port tub_sel driven by constant 1
+WARNING: [Synth 8-3917] design Controller has port zero driven by constant 0
+WARNING: [Synth 8-3331] design Learn has unconnected port music[2]
+WARNING: [Synth 8-264] enable of latch \learn_mode/slib/low_reg  is always disabled
+WARNING: [Synth 8-264] enable of latch \learn_mode/slib/low_reg  is always disabled
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\auto_mode/lib1/low_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\learn_mode/slib/note_reg[3] )
+INFO: [Synth 8-3886] merging instance 'auto_mode/lib1/note_reg[3]' (LD) to 'auto_mode/lib1/note_reg[1]'
+INFO: [Synth 8-3886] merging instance 'auto_mode/lib1/note_reg[1]' (LD) to 'auto_mode/lib1/note_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\auto_mode/lib1/note_reg[2] )
+INFO: [Synth 8-3886] merging instance 'pat/en_mode2_reg' (LD) to 'pat/mode_light_reg[1]'
+INFO: [Synth 8-3886] merging instance 'learn_mode/time_counter_reg[27]' (FDCE) to 'learn_mode/time_counter_reg[28]'
+INFO: [Synth 8-3886] merging instance 'learn_mode/time_counter_reg[28]' (FDCE) to 'learn_mode/time_counter_reg[29]'
+INFO: [Synth 8-3886] merging instance 'learn_mode/time_counter_reg[29]' (FDCE) to 'learn_mode/time_counter_reg[30]'
+INFO: [Synth 8-3886] merging instance 'learn_mode/time_counter_reg[31]' (FDCE) to 'learn_mode/time_counter_reg[30]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\learn_mode/time_counter_reg[30] )
+INFO: [Synth 8-3886] merging instance 'pat/en_mode3_reg' (LD) to 'pat/mode_light_reg[2]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\auto_mode/lib1/note_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\learn_mode/segments_reg[0] )
+INFO: [Synth 8-3886] merging instance 'learn_mode/segments_reg[1]' (FDCE) to 'learn_mode/segments_reg[5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\learn_mode/light_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\auto_mode/led_reg[7] )
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[7][0]' (FD) to 'buzzer/notes_reg[7][12]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[6][0]' (FD) to 'buzzer/notes_reg[6][10]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[5][0]' (FD) to 'buzzer/notes_reg[1][10]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[4][0]' (FD) to 'buzzer/notes_reg[1][10]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[5][0]' (FD) to 'buzzer/notes_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[4][0]' (FD) to 'buzzer/notes_reg[0][31]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[3][0]' (FD) to 'buzzer/notes_reg[3][14]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[2][0]' (FD) to 'buzzer/notes_reg[2][6]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[1][0]' (FD) to 'buzzer/notes_reg[1][11]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[0][0]' (FD) to 'buzzer/notes_reg[1][10]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[0][0]' (FD) to 'buzzer/notes_reg[0][31]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[7][1]' (FD) to 'buzzer/notes_reg[7][15]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[6][1]' (FD) to 'buzzer/notes_reg[1][10]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[6][1]' (FD) to 'buzzer/notes_reg[0][31]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[5][1]' (FD) to 'buzzer/notes_reg[5][10]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[4][1]' (FD) to 'buzzer/notes_reg[4][4]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[3][1]' (FD) to 'buzzer/notes_reg[3][5]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[2][1]' (FD) to 'buzzer/notes_reg[2][17]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[1][1]' (FD) to 'buzzer/notes_reg[1][19]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[0][1]' (FD) to 'buzzer/notes_reg[1][10]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[7][2]' (FD) to 'buzzer/notes_reg[1][15]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[0][1]' (FD) to 'buzzer/notes_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[7][2]' (FD) to 'buzzer/notes_reg[4][11]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[6][2]' (FD) to 'buzzer/notes_reg[6][5]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[5][2]' (FD) to 'buzzer/notes_reg[5][3]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[4][2]' (FD) to 'buzzer/notes_reg[4][6]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[3][2]' (FD) to 'buzzer/notes_reg[1][15]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[3][2]' (FD) to 'buzzer/notes_reg[4][11]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[2][2]' (FD) to 'buzzer/notes_reg[2][4]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[1][2]' (FD) to 'buzzer/notes_reg[1][10]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[0][2]' (FD) to 'buzzer/notes_reg[1][10]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[1][2]' (FD) to 'buzzer/notes_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[0][2]' (FD) to 'buzzer/notes_reg[0][31]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[7][3]' (FD) to 'buzzer/notes_reg[7][7]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[5][3]' (FD) to 'buzzer/notes_reg[5][4]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[4][3]' (FD) to 'buzzer/notes_reg[1][10]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[3][3]' (FD) to 'buzzer/notes_reg[1][10]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[4][3]' (FD) to 'buzzer/notes_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[3][3]' (FD) to 'buzzer/notes_reg[0][31]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[2][3]' (FD) to 'buzzer/notes_reg[2][7]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[0][3]' (FD) to 'buzzer/notes_reg[1][10]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[7][4]' (FD) to 'buzzer/notes_reg[1][15]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[0][3]' (FD) to 'buzzer/notes_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[7][4]' (FD) to 'buzzer/notes_reg[4][11]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[6][4]' (FD) to 'buzzer/notes_reg[6][18]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[5][4]' (FD) to 'buzzer/notes_reg[5][5]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[4][4]' (FD) to 'buzzer/notes_reg[4][14]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[3][4]' (FD) to 'buzzer/notes_reg[3][8]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[2][4]' (FD) to 'buzzer/notes_reg[2][8]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[1][4]' (FD) to 'buzzer/notes_reg[1][5]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[0][4]' (FD) to 'buzzer/notes_reg[1][10]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[0][4]' (FD) to 'buzzer/notes_reg[0][31]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[7][5]' (FD) to 'buzzer/notes_reg[7][9]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[5][5]' (FD) to 'buzzer/notes_reg[5][17]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[4][5]' (FD) to 'buzzer/notes_reg[4][15]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[3][5]' (FD) to 'buzzer/notes_reg[3][9]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[2][5]' (FD) to 'buzzer/notes_reg[2][13]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[1][5]' (FD) to 'buzzer/notes_reg[1][16]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[0][5]' (FD) to 'buzzer/notes_reg[1][10]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[0][5]' (FD) to 'buzzer/notes_reg[0][31]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[7][6]' (FD) to 'buzzer/notes_reg[7][8]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[6][6]' (FD) to 'buzzer/notes_reg[6][12]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[5][6]' (FD) to 'buzzer/notes_reg[1][15]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[5][6]' (FD) to 'buzzer/notes_reg[4][11]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[4][6]' (FD) to 'buzzer/notes_reg[4][9]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[3][6]' (FD) to 'buzzer/notes_reg[1][10]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[3][6]' (FD) to 'buzzer/notes_reg[0][31]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[2][6]' (FD) to 'buzzer/notes_reg[2][10]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[1][6]' (FD) to 'buzzer/notes_reg[1][12]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[0][6]' (FD) to 'buzzer/notes_reg[1][10]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[0][6]' (FD) to 'buzzer/notes_reg[0][31]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[7][7]' (FD) to 'buzzer/notes_reg[7][10]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[6][7]' (FD) to 'buzzer/notes_reg[1][15]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[6][7]' (FD) to 'buzzer/notes_reg[4][11]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[5][7]' (FD) to 'buzzer/notes_reg[5][11]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[4][7]' (FD) to 'buzzer/notes_reg[1][10]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[4][7]' (FD) to 'buzzer/notes_reg[0][31]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[3][7]' (FD) to 'buzzer/notes_reg[3][12]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[2][7]' (FD) to 'buzzer/notes_reg[2][16]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[1][7]' (FD) to 'buzzer/notes_reg[1][14]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[0][7]' (FD) to 'buzzer/notes_reg[1][10]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[0][7]' (FD) to 'buzzer/notes_reg[0][31]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[7][8]' (FD) to 'buzzer/notes_reg[7][11]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[6][8]' (FD) to 'buzzer/notes_reg[1][15]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[5][8]' (FD) to 'buzzer/notes_reg[1][10]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[6][8]' (FD) to 'buzzer/notes_reg[4][11]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[5][8]' (FD) to 'buzzer/notes_reg[0][31]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[4][8]' (FD) to 'buzzer/notes_reg[4][13]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[3][8]' (FD) to 'buzzer/notes_reg[3][10]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[2][8]' (FD) to 'buzzer/notes_reg[2][11]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[1][8]' (FD) to 'buzzer/notes_reg[1][10]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[0][8]' (FD) to 'buzzer/notes_reg[1][10]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[1][8]' (FD) to 'buzzer/notes_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[0][8]' (FD) to 'buzzer/notes_reg[0][31]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[7][9]' (FD) to 'buzzer/notes_reg[7][16]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[6][9]' (FD) to 'buzzer/notes_reg[1][15]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[6][9]' (FD) to 'buzzer/notes_reg[4][11]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[5][9]' (FD) to 'buzzer/notes_reg[5][12]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[4][9]' (FD) to 'buzzer/notes_reg[4][17]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[2][9]' (FD) to 'buzzer/notes_reg[1][10]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[1][9]' (FD) to 'buzzer/notes_reg[1][15]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[0][9]' (FD) to 'buzzer/notes_reg[1][10]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[2][9]' (FD) to 'buzzer/notes_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[1][9]' (FD) to 'buzzer/notes_reg[4][11]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[0][9]' (FD) to 'buzzer/notes_reg[0][31]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[7][10]' (FD) to 'buzzer/notes_reg[7][17]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[6][10]' (FD) to 'buzzer/notes_reg[6][14]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[4][10]' (FD) to 'buzzer/notes_reg[1][15]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[4][10]' (FD) to 'buzzer/notes_reg[4][11]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[3][10]' (FD) to 'buzzer/notes_reg[3][11]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[2][10]' (FD) to 'buzzer/notes_reg[2][14]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[1][10]' (FD) to 'buzzer/notes_reg[3][13]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[0][10]' (FD) to 'buzzer/notes_reg[3][13]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[1][10]' (FD) to 'buzzer/notes_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[0][10]' (FD) to 'buzzer/notes_reg[0][31]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[6][11]' (FD) to 'buzzer/notes_reg[6][15]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[5][11]' (FD) to 'buzzer/notes_reg[5][18]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[4][11]' (FD) to 'buzzer/notes_reg[1][15]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[4][11]' (FD) to 'buzzer/notes_reg[6][13]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[3][11]' (FD) to 'buzzer/notes_reg[3][15]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[2][11]' (FD) to 'buzzer/notes_reg[2][15]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[1][11]' (FD) to 'buzzer/notes_reg[1][13]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[0][11]' (FD) to 'buzzer/notes_reg[3][13]'
+INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[0][11]' (FD) to 'buzzer/notes_reg[0][31]'
 INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[6][12]' (FD) to 'buzzer/notes_reg[6][16]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[1][12]' (FD) to 'buzzer/notes_reg[1][18]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[0][12]' (FD) to 'buzzer/notes_reg[3][13]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[7][13]' (FD) to 'buzzer/notes_reg[7][18]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[6][13]' (FD) to 'buzzer/notes_reg[1][15]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[3][13]' (FD) to 'buzzer/notes_reg[7][14]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[1][13]' (FD) to 'buzzer/notes_reg[1][17]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[0][13]' (FD) to 'buzzer/notes_reg[7][14]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[7][14]' (FD) to 'buzzer/notes_reg[4][16]'
-INFO: [Synth 8-3886] merging instance 'buzzer/notes_reg[6][14]' (FD) to 'buzzer/notes_reg[6][17]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\buzzer/notes_reg[5][16] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\buzzer/notes_reg[0][31] )
+WARNING: [Synth 8-264] enable of latch \learn_mode/slib/low_reg  is always disabled
+WARNING: [Synth 8-264] enable of latch \learn_mode/slib/low_reg  is always disabled
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\learn_mode/speaker_note_reg[3] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\auto_mode/led_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\auto_mode/led_reg[6] )
+WARNING: [Synth 8-264] enable of latch \learn_mode/slib/low_reg  is always disabled
+WARNING: [Synth 8-264] enable of latch \learn_mode/slib/low_reg  is always disabled
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\speaker_note_reg[3] )
+WARNING: [Synth 8-264] enable of latch \learn_mode/slib/low_reg  is always disabled
+WARNING: [Synth 8-264] enable of latch \learn_mode/slib/low_reg  is always disabled
 WARNING: [Synth 8-3332] Sequential element (pat/en_mode1_reg) is unused and will be removed from module Controller.
-WARNING: [Synth 8-3332] Sequential element (buzzer/notes_reg[5][16]) is unused and will be removed from module Controller.
 WARNING: [Synth 8-3332] Sequential element (buzzer/notes_reg[0][31]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (buzzer/notes_reg[5][16]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (learn_mode/slib/note_reg[3]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (learn_mode/time_counter_reg[30]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (learn_mode/light_reg[7]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (learn_mode/segments_reg[0]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (learn_mode/finished_reg) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (learn_mode/speaker_note_reg[3]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/lib1/note_reg[2]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/lib1/note_reg[0]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/lib1/low_reg) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/index_reg[7]) is unused and will be removed from module Controller.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net index_reg[7] with 1st driver pin 'auto_mode/index_reg[7]/Q' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v:19]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net index_reg[7] with 2nd driver pin 'GND' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v:19]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net index_reg[7] is connected to constant driver, other driver is ignored [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v:19]
+WARNING: [Synth 8-3332] Sequential element (auto_mode/index_reg[6]) is unused and will be removed from module Controller.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net index_reg[6] with 1st driver pin 'auto_mode/index_reg[6]/Q' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v:19]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net index_reg[6] with 2nd driver pin 'GND' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v:19]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net index_reg[6] is connected to constant driver, other driver is ignored [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v:19]
+WARNING: [Synth 8-3332] Sequential element (auto_mode/index_reg[5]) is unused and will be removed from module Controller.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net index_reg[5] with 1st driver pin 'auto_mode/index_reg[5]/Q' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v:19]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net index_reg[5] with 2nd driver pin 'GND' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v:19]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net index_reg[5] is connected to constant driver, other driver is ignored [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v:19]
+WARNING: [Synth 8-3332] Sequential element (auto_mode/index_reg[4]) is unused and will be removed from module Controller.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net index_reg[4] with 1st driver pin 'auto_mode/index_reg[4]/Q' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v:19]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net index_reg[4] with 2nd driver pin 'GND' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v:19]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net index_reg[4] is connected to constant driver, other driver is ignored [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v:19]
+WARNING: [Synth 8-3332] Sequential element (auto_mode/index_reg[3]) is unused and will be removed from module Controller.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net index_reg[3] with 1st driver pin 'auto_mode/index_reg[3]/Q' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v:19]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net index_reg[3] with 2nd driver pin 'GND' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v:19]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net index_reg[3] is connected to constant driver, other driver is ignored [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v:19]
+WARNING: [Synth 8-3332] Sequential element (auto_mode/index_reg[2]) is unused and will be removed from module Controller.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net index_reg[2] with 1st driver pin 'auto_mode/index_reg[2]/Q' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v:19]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net index_reg[2] with 2nd driver pin 'GND' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v:19]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net index_reg[2] is connected to constant driver, other driver is ignored [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v:19]
+WARNING: [Synth 8-3332] Sequential element (auto_mode/index_reg[1]) is unused and will be removed from module Controller.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net index_reg[1] with 1st driver pin 'auto_mode/index_reg[1]/Q' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v:19]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net index_reg[1] with 2nd driver pin 'GND' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v:19]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net index_reg[1] is connected to constant driver, other driver is ignored [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v:19]
+WARNING: [Synth 8-3332] Sequential element (auto_mode/index_reg[0]) is unused and will be removed from module Controller.
+CRITICAL WARNING: [Synth 8-3352] multi-driven net index_reg[0] with 1st driver pin 'auto_mode/index_reg[0]/Q' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v:19]
+CRITICAL WARNING: [Synth 8-3352] multi-driven net index_reg[0] with 2nd driver pin 'GND' [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v:19]
+CRITICAL WARNING: [Synth 8-5559] multi-driven net index_reg[0] is connected to constant driver, other driver is ignored [E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v:19]
+WARNING: [Synth 8-3332] Sequential element (auto_mode/led_reg[6]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/led_reg[0]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[31]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[30]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[29]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[28]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[27]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[26]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[25]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[24]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[23]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[22]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[21]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[20]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[19]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[18]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[17]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[16]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[15]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[14]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[13]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[12]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[11]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[10]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[9]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[8]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[7]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[6]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[5]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[4]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[3]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[2]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[1]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/cnt_reg[0]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (display_segments_reg[0]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (speaker_note_reg[3]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-264] enable of latch \learn_mode/slib/low_reg  is always disabled
+WARNING: [Synth 8-264] enable of latch \learn_mode/slib/low_reg  is always disabled
+WARNING: [Synth 8-264] enable of latch \learn_mode/slib/low_reg  is always disabled
+WARNING: [Synth 8-264] enable of latch \learn_mode/slib/low_reg  is always disabled
+WARNING: [Synth 8-264] enable of latch \learn_mode/slib/low_reg  is always disabled
+WARNING: [Synth 8-264] enable of latch \learn_mode/slib/low_reg  is always disabled
+WARNING: [Synth 8-264] enable of latch \learn_mode/slib/low_reg  is always disabled
+WARNING: [Synth 8-264] enable of latch \learn_mode/slib/low_reg  is always disabled
+WARNING: [Synth 8-264] enable of latch \learn_mode/slib/low_reg  is always disabled
+WARNING: [Synth 8-264] enable of latch \learn_mode/slib/low_reg  is always disabled
+WARNING: [Synth 8-264] enable of latch \learn_mode/slib/low_reg  is always disabled
+WARNING: [Synth 8-264] enable of latch \learn_mode/slib/low_reg  is always disabled
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 711.477 ; gain = 481.520
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:05 ; elapsed = 00:00:17 . Memory (MB): peak = 714.637 ; gain = 484.797
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -310,13 +540,17 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 711.477 ; gain = 481.520
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:24 . Memory (MB): peak = 714.637 ; gain = 484.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-264] enable of latch \learn_mode/slib/low_reg  is always disabled
+WARNING: [Synth 8-264] enable of latch \learn_mode/slib/low_reg  is always disabled
+WARNING: [Synth 8-264] enable of latch \learn_mode/slib/low_reg  is always disabled
+WARNING: [Synth 8-264] enable of latch \learn_mode/slib/low_reg  is always disabled
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 711.477 ; gain = 481.520
+Finished Timing Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:24 . Memory (MB): peak = 714.637 ; gain = 484.797
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -327,8 +561,11 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (learn_mode/slib/low_reg) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/music_reg[2]) is unused and will be removed from module Controller.
+WARNING: [Synth 8-3332] Sequential element (auto_mode/music_reg[1]) is unused and will be removed from module Controller.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 733.809 ; gain = 503.852
+Finished Technology Mapping : Time (s): cpu = 00:00:08 ; elapsed = 00:00:24 . Memory (MB): peak = 736.781 ; gain = 506.941
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -352,7 +589,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 733.809 ; gain = 503.852
+Finished IO Insertion : Time (s): cpu = 00:00:08 ; elapsed = 00:00:24 . Memory (MB): peak = 736.781 ; gain = 506.941
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -365,7 +602,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 733.809 ; gain = 503.852
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:08 ; elapsed = 00:00:24 . Memory (MB): peak = 736.781 ; gain = 506.941
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -377,25 +614,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 733.809 ; gain = 503.852
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:08 ; elapsed = 00:00:24 . Memory (MB): peak = 736.781 ; gain = 506.941
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 733.809 ; gain = 503.852
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:08 ; elapsed = 00:00:24 . Memory (MB): peak = 736.781 ; gain = 506.941
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 733.809 ; gain = 503.852
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:24 . Memory (MB): peak = 736.781 ; gain = 506.941
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 733.809 ; gain = 503.852
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:08 ; elapsed = 00:00:24 . Memory (MB): peak = 736.781 ; gain = 506.941
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -412,52 +649,57 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     1|
-|2     |CARRY4 |    27|
-|3     |LUT1   |     5|
-|4     |LUT2   |    18|
-|5     |LUT3   |     3|
-|6     |LUT4   |    38|
-|7     |LUT5   |    49|
-|8     |LUT6   |    50|
+|2     |CARRY4 |    48|
+|3     |LUT1   |    10|
+|4     |LUT2   |    35|
+|5     |LUT3   |    48|
+|6     |LUT4   |    83|
+|7     |LUT5   |    90|
+|8     |LUT6   |    88|
 |9     |MUXF7  |     1|
-|10    |FDCE   |     3|
-|11    |FDRE   |   118|
-|12    |LD     |     3|
-|13    |IBUF   |    13|
-|14    |OBUF   |    12|
+|10    |FDCE   |    57|
+|11    |FDRE   |   192|
+|12    |LD     |     6|
+|13    |IBUF   |    14|
+|14    |OBUF   |    24|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+-------------------------+-----------+------+
 |      |Instance                 |Module     |Cells |
 +------+-------------------------+-----------+------+
-|1     |top                      |           |   341|
-|2     |  buzzer                 |Buzzer     |   229|
-|3     |    debounce_high_tone   |Debounce_0 |    54|
-|4     |    debounce_low_tone    |Debounce_1 |    54|
-|5     |  pat                    |patterns   |    65|
-|6     |    debounce_mode_switch |Debounce   |    54|
+|1     |top                      |           |   697|
+|2     |  auto_mode              |auto_play  |    57|
+|3     |    debounce_switch_song |Debounce_3 |    55|
+|4     |  buzzer                 |Buzzer     |   229|
+|5     |    debounce_high_tone   |Debounce_1 |    54|
+|6     |    debounce_low_tone    |Debounce_2 |    54|
+|7     |  debounce_song_switch   |Debounce   |    55|
+|8     |  learn_mode             |Learn      |   189|
+|9     |    slib                 |lib        |    25|
+|10    |  pat                    |patterns   |    87|
+|11    |    debounce_mode_switch |Debounce_0 |    56|
 +------+-------------------------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 733.809 ; gain = 503.852
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:08 ; elapsed = 00:00:24 . Memory (MB): peak = 736.781 ; gain = 506.941
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 9 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:07 ; elapsed = 00:00:16 . Memory (MB): peak = 733.809 ; gain = 174.883
-Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:21 . Memory (MB): peak = 733.809 ; gain = 503.852
+Synthesis finished with 0 errors, 24 critical warnings and 98 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:05 ; elapsed = 00:00:19 . Memory (MB): peak = 736.781 ; gain = 175.477
+Synthesis Optimization Complete : Time (s): cpu = 00:00:08 ; elapsed = 00:00:25 . Memory (MB): peak = 736.781 ; gain = 506.941
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 44 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 69 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 3 instances were transformed.
-  LD => LDCE: 3 instances
+  A total of 6 instances were transformed.
+  LD => LDCE: 6 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-126 Infos, 13 Warnings, 1 Critical Warnings and 0 Errors encountered.
+154 Infos, 113 Warnings, 24 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:24 . Memory (MB): peak = 733.809 ; gain = 507.938
+synth_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:28 . Memory (MB): peak = 736.781 ; gain = 511.348
 INFO: [Common 17-1381] The checkpoint 'E:/OneDrive/Code/FPGA/dlproj2/dlproj2.runs/synth_1/Controller.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Controller_utilization_synth.rpt -pb Controller_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 733.809 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sun Dec 17 21:33:02 2023...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 736.781 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Dec 20 23:09:46 2023...
