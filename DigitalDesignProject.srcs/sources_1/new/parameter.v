@@ -1,0 +1,1 @@
+parameter input_size = 8;    

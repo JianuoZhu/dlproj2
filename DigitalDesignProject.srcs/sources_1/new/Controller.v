@@ -18,8 +18,6 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
-
 module Controller(
     input[7:0] inputs,
     input low_button,
@@ -31,14 +29,13 @@ module Controller(
     output [2:0] mode_light,
     output wire speaker,
     output reg [7:0] light,
-    output reg [7:0] display_segments,
-    output tub_sel,
+    output reg [7:0] fin_display_segments,
+    output reg [1:0]tub_sel,
     output low_light,
     output high_light,
     output zero
-);
-                                                                     
-    assign tub_sel=1'b1;
+);      
+    reg [7:0] display_segments;                 
     assign zero=1'b0;
     wire [2:0] mode;
     wire en_mode1, en_mode2, en_mode3;
@@ -53,6 +50,7 @@ module Controller(
     wire debounced_song_switch;
     wire auto_low, auto_high;
     reg speaker_low, speaker_high;
+    wire [7:0] user_display;
     Debounce debounce_song_switch(.clk(clk), .button_in(song_switch), .button_out(debounced_song_switch));
     //连接模式选择
     patterns pat(.clk(clk),.rst(rst),.mode_switch(mode_switch),.mode_light(mode_light),.en_mode1(en_mode1),.en_mode2(en_mode2),.en_mode3(en_mode3));
@@ -99,11 +97,23 @@ module Controller(
         end
     end
     wire finished;
-    Learn learn_mode(.enable(en_mode2),.clk(clk),.rst_n(rst),.note(free_note),.music(3'b000),.max_index(7'b0001010),.light(light_learn),.low_light(low_light),.high_light(high_light),.segments(segments_learn),.finished(finished), .speaker_note(learn_note));
+    Learn learn_mode(.enable(en_mode2),.clk(clk),.rst_n(rst),.note(free_note),.music(3'b000),.max_index(7'b0001010),.light(light_learn),.low_light(low_light),.high_light(high_light),.segments(segments_learn),.finished(finished), .speaker_note(learn_note), .user_display(user_display));
     wire switch_song;
     assign switch_song = 0;
     wire tub_sel_2;
     auto_play auto_mode(.enable(en_mode3),.clk(clk),.rst(rst),.switch_song(debounced_song_switch),.seg_out(tub_sel_2),.seg_ctrl(segments_auto),.led(light_auto),.note(auto_note), .low(auto_low), .high(auto_high));
+//user display
+    reg [1:0] an = 2'b10;
+    always @ (posedge clk) begin
+        if (an == 2'b10) begin
+            an <= 2'b01;
+            fin_display_segments <= display_segments;
+        end else begin
+            an <= 2'b10;
+            fin_display_segments <= user_display;
+        end
+    end
+
 endmodule
 
 module patterns(
@@ -114,9 +124,7 @@ output reg en_mode1,en_mode2,en_mode3,
 output reg [2:0] mode_light
     );
     
-    parameter MODE_1 = 2'b00;
-    parameter MODE_2 = 2'b01;
-    parameter MODE_3 = 2'b10;
+    parameter MODE_1 = 2'b00, MODE_2 = 2'b01, MODE_3 = 2'b10;
     
     reg [1:0] current_mode;
     reg flag;

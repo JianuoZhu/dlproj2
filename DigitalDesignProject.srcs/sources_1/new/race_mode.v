@@ -10,12 +10,9 @@ module Learn(
     output high_light,
     output reg [7:0] segments,
     output reg finished,
-    output reg [3:0] speaker_note,
-    output wire [7:0] user_display
+    output reg [3:0] speaker_note
 );
     parameter A_segment = 8'b11101110, B_segment = 8'b00111110, C_segment = 8'b10011100, D_segment = 8'b01111010, E_segment = 8'b10011110;
-    
-    assign user_display = A_segment;
     wire[7:0] keys [7:0];
     assign keys[0] = 8'b00000000;
     assign keys[1] = 8'b00000001; 
@@ -26,13 +23,15 @@ module Learn(
     assign keys[6] = 8'b00100000; 
     assign keys[7] = 8'b01000000;  
     parameter WAITING = 2'b00, PLAYING = 2'b01, FINISHED = 2'b10, zeros = 7'b0000_000, a_sec = 100000000;
+    parameter WAIT_MAX = 200000000;
     reg [1:0] current_state;
     reg [7:0] index;
     wire [3:0] supposed_note;
     reg [31:0] time_counter;
     lib slib(.music(music), .index(index), .note(supposed_note), .low(low_light), .high(high_light));
     reg press_flag;
-    reg [7:0] wrong_counter;
+    reg [31:0] wrong_counter;
+    reg [31:0] wait_counter;
     always @(posedge clk, negedge rst_n) begin
         if(!rst_n)begin
             finished <= 1'b0;
@@ -46,25 +45,22 @@ module Learn(
         else if(enable)begin
             case (current_state)
                 WAITING: begin
-                    if(note > 0 && note != supposed_note && !press_flag) begin
-                        press_flag <= 1'b1;
-                        wrong_counter <= wrong_counter + 1;
-                        current_state <= WAITING;
-                        light <= keys[supposed_note];
-                    end
-                    else if(note == 0) begin
-                        press_flag <= 1'b0;
-                        current_state <= WAITING;
-                        light <= keys[supposed_note];
-                    end
-                    else if (note == supposed_note) begin
+                    if (note == supposed_note) begin
                         current_state <= PLAYING;
-                        time_counter <= 0;
                         light <= zeros;
+                        wrong_counter <= wrong_counter + wait_counter;
+                        wait_counter <= 0;
+                    end
+                    else if (wait_counter > WAIT_MAX)begin
+                        current_state <= PLAYING;
+                        light <= zeros;
+                        wrong_counter <= wrong_counter + wait_counter;
+                        wait_counter <= 0;
                     end 
                     else begin
                         current_state <= WAITING;
                         light <= keys[supposed_note];
+                        wait_counter <= wait_counter + 1;
                     end
                 end
                 PLAYING: begin
@@ -84,13 +80,13 @@ module Learn(
                     end
                 end
                 FINISHED: begin
-                    if(wrong_counter < (index >> 2))begin
+                    if(wrong_counter < ((WAIT_MAX * max_index) >> 2))begin
                         segments <= A_segment;
                     end
-                    else if(wrong_counter < (index >> 1))begin
+                    else if(wrong_counter < ((WAIT_MAX * max_index) >> 1))begin
                         segments <= B_segment;
                     end
-                    else if(wrong_counter < (index >>1 + (index >> 2)))begin
+                    else if(wrong_counter < ((WAIT_MAX * max_index) >>1 + ((WAIT_MAX * max_index) >> 2)))begin
                         segments <= C_segment;
                     end
                     else begin
