@@ -3,78 +3,132 @@ module auto_play(
     input enable,
     input rst,
     input switch_song,
+    input start,
+    input speedup,
     output seg_out,
     output reg [7:0] seg_ctrl,
     output reg [7:0] led,
-    output [3:0] note,
+    output reg [3:0] note_out,
     output low,
     output high
-//    output speaker
     );
-    reg [2:0] music = 3'b000;
-    reg [7:0] index = 8'b00000000;
+
+    `include "parameter.v"
+    reg [2:0] music = song1;
+    reg [7:0] index = index0;
+    wire [3:0] note_lib;
     wire debounced_switch_song;
+    wire debounced_start;
+    wire gap;
+    Debounce debounce_start(.clk(clk), .button_in(start), .button_out(debounced_start));
     Debounce debounce_switch_song(.clk(clk), .button_in(switch_song), .button_out(debounced_switch_song));
-    lib lib1(.music(music),.index(index),.note(note), .low(low), .high(high));
+    lib lib1(.music(music),.index(index),.note(note_lib), .low(low), .high(high),.gap(gap));
 //    buzzer buz1(.clk(clk),.note(note),.button_low_tone(low),.button_high_tone(high),.speaker(speaker));
-    parameter TIME = 50000000;//单个音符长短,或许存在lib输出
+    
     reg [31:0] cnt;
-    reg flag = 1'b0;
+    reg [31:0] cnt2;
+    reg flag = set0;
+    reg flag2 = set0;
+    reg play = set0;
+    reg [31:0] Time;
+    reg [31:0] Gap;
+    
     always @(posedge clk, negedge rst) begin
         if(!rst) begin
-            music <= 3'b000;
-            index <= 8'b00000000;
-            flag <= 1'b0;
-            cnt <= 32'd0;
+            music <= song1;
+            index <= index0;
+            flag <= set0;
+            flag2 <= set0;
+            cnt <= cnt0;
+            cnt2 <= cnt0;
+            play <= set0;
         end
         else if(enable) begin
-            case(note)
-                4'b0000: led <= 8'b00000000;
-                4'b0001: led <= 8'b00000001;
-                4'b0010: led <= 8'b00000010;
-                4'b0011: led <= 8'b00000100;
-                4'b0100: led <= 8'b00001000;
-                4'b0101: led <= 8'b00010000;
-                4'b0110: led <= 8'b00100000;
-                4'b0111: led <= 8'b01000000;
-                default: led <= 8'b00000000;
+            case(note_out)
+                stop: led <= lstop;
+                do: led <= ldo;
+                re: led <= lre;
+                mi: led <= lmi;
+                fa: led <= lfa;
+                so: led <= lsi;
+                la: led <= lla;
+                si: led <= lsi;
+                default: led <= lstop;
             endcase
-            if (debounced_switch_song && (!flag)) begin
-                index <= 8'b00000000;
-                case(music)
-                    3'b000: music <= 3'b001;
-                    3'b001: music <= 3'b000;
-                endcase
-                flag <= 1'b1;
-            end
-            else if (!debounced_switch_song) begin
-                flag <= 1'b0;
-            end
-            if(cnt < TIME) begin
-                cnt = cnt + 1;
+            if(speedup) begin
+                Time <= TIME>>1;
+                Gap <= GAP>>1;
             end
             else begin
-                cnt = 32'd0;
-                if(index == 8'b11111111)begin
-                    index <= 8'b00000000; 
+                Time <= TIME;
+                Gap <= GAP;
+            end
+            if (debounced_switch_song && (!flag)) begin
+                index <= index0;
+                play <= set0;
+                case(music)
+                    song1: music <= song2;
+                    song2: music <= song3;
+                    song3: music <= song1;
+                endcase
+                flag <= set1;
+            end
+            else if (!debounced_switch_song) begin
+                flag <= set0;
+            end
+            if (debounced_start && (!flag2)) begin
+                play <= set1;
+                index <= index0;
+                cnt <= cnt0;
+                cnt2 <= cnt0;
+                flag2 <= set1;
+            end
+            else if (!debounced_start) begin
+                flag2 <= set0;
+            end
+            if(play) begin
+                if(cnt < Time) begin
+                    cnt <= cnt + set1;
                 end
                 else begin
-                    index <= index + 1'b1; 
+                    if(gap & cnt2 < Gap) begin
+                        cnt2 <= cnt2 + set1;
+                    end
+                    else begin
+                        cnt <= cnt0;
+                        cnt2 <= cnt0;
+                        if(index == indexfull)begin
+                            play <= set0;
+                            index <= index0; 
+                        end
+                        else begin
+                            index <= index + set1; 
+                        end
+                    end
                 end
-            end        
+            end
         end
     end
     
-    assign seg_out = 1'b1;
+    assign seg_out = set1;
+    always @(posedge clk)begin
+        if(play && (cnt2 == cnt0))begin
+            note_out <= note_lib;
+        end
+        else begin
+            note_out <= stop;
+        end
+    end
     always @(music) begin
         case(music)
-            3'b000:
-                seg_ctrl <= 8'b01100000;
-            3'b001:
-                seg_ctrl <= 8'b11011010;
+            song1:
+                seg_ctrl <= seg1;
+            song2:
+                seg_ctrl <= seg2;
+            song3:
+                seg_ctrl <= seg3;
             default:
-                seg_ctrl <= 8'b00000000;
+                seg_ctrl <= segnull;
         endcase
-        //显示曲目？多个seg显示名字？
     end
 endmodule

@@ -16,6 +16,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param xicom.use_bs_reader 1
 set_param synth.incrementalSynthesisCache C:/Users/Jianuo_Zhu/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-20052-JianuoLegion/incrSyn
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
@@ -31,11 +32,15 @@ set_property target_language Verilog [current_project]
 set_property ip_output_repo e:/OneDrive/Code/FPGA/dlproj2/dlproj2.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
+  E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/parameter.v
   E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Auto_Play.v
   E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Buzzer.v
   E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Learning_Mode.v
   E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Library.v
+  E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/RAM_module.v
+  E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/adjust_mode.v
   E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/debounce.v
+  E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/race_mode.v
   E:/OneDrive/Code/FPGA/dlproj2/DigitalDesignProject.srcs/sources_1/new/Controller.v
 }
 # Mark all dcp files as not used in implementation to prevent them from being
