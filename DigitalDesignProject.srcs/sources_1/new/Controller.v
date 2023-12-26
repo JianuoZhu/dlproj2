@@ -50,7 +50,6 @@ module Controller(
     wire debounced_song_switch;
     wire auto_low, auto_high;
     reg speaker_low, speaker_high;
-    wire [7:0] user_display;
     Debounce debounce_song_switch(.clk(clk), .button_in(song_switch), .button_out(debounced_song_switch));
     //连接模式选择
     patterns pat(.clk(clk),.rst(rst),.mode_switch(mode_switch),.mode_light(mode_light),.en_mode1(en_mode1),.en_mode2(en_mode2),.en_mode3(en_mode3));
