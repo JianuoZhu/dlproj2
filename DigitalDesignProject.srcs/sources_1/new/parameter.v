@@ -7,3 +7,6 @@ parameter cnt0 = 32'd0;
 parameter set0 = 1'b0,set1 = 1'b1;
 parameter TIME = 50000000;
 parameter GAP = 10000000;
+parameter ADJUST_STATE = 2'b00, PLAY_STATE = 2'b01, FINISH_STATE = 2'b10, a_sec = 100000000;
+parameter A_segment = 8'b11101110, B_segment = 8'b00111110, C_segment = 8'b10011100, D_segment = 8'b01111010, E_segment = 8'b10011110;
+parameter WAITING = 2'b00, PLAYING = 2'b01, FINISHED = 2'b10, zeros = 7'b0000_000, a_sec = 100000000;

@@ -14,7 +14,6 @@ module Learn(
     output reg [7:0] user_display
 );
     `include "parameter.v"
-    parameter A_segment = 8'b11101110, B_segment = 8'b00111110, C_segment = 8'b10011100, D_segment = 8'b01111010, E_segment = 8'b10011110;
     wire [7:0] max_index[1:0];
     assign max_index[0] = 8'b0010_1111;
     assign max_index[1] = 8'b0010_0011;

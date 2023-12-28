@@ -57,6 +57,7 @@ module Controller(
     wire debounced_song_switch;
     wire auto_low, auto_high;
     reg speaker_low, speaker_high;
+    //按键消抖
     Debounce debounce_song_switch(.clk(clk), .button_in(song_switch), .button_out(debounced_song_switch));
     //连接模式选择
     patterns pat(.clk(clk),.rst(rst),.mode_switch(mode_switch),.mode_light(mode_light),.en_mode1(en_mode1),.en_mode2(en_mode2),.en_mode3(en_mode3), .en_mode4(en_mode4), .en_mode5(en_mode5));
@@ -86,6 +87,7 @@ module Controller(
     end
     endgenerate*/
     integer _i;
+    //连接RAM，实现换按键功能
     memory_module memory(
             .clk(clk),
             .reset(rst),
@@ -96,6 +98,7 @@ module Controller(
             .read_enable(r_enable)
         );
     always @(posedge clk) begin
+        //简易分频，读写分离
         clk_counter <= clk_counter + 1;
         if(clk_counter % 2 == 0)begin
             r_enable <= 1'b1;
@@ -117,6 +120,7 @@ module Controller(
             m_in <= adj_key;
             m_address <= adj_addr;
         end
+        //得到按键对应的音符
         for(_i=0;_i<8;_i=_i+1)
         begin
             if(keys[_i]==inputs)
@@ -125,6 +129,7 @@ module Controller(
                 light_free<=keys[_i];
             end
         end
+        //绑定不同模式的输出
         if(mode_light==5'b00001) begin
             light<=light_free;
             speaker_note<=free_note;
@@ -174,6 +179,7 @@ module Controller(
     wire finished;    
     wire switch_song;
     wire tub_sel_2;
+    //连接各个模式
     Learn learn_mode(.enable(en_mode2),.clk(clk),.rst_n(rst),.note(free_note),.switch_song(debounced_song_switch),.user_select(user_select),.light(light_learn),.low_light(learn_low_light),.high_light(learn_high_light),.segments(segments_learn),.finished(finished), .speaker_note(learn_note), .user_display(learn_user_display));
     auto_play auto_mode(.enable(en_mode3),.clk(clk),.rst(rst),.switch_song(debounced_song_switch), .start(start_button), .speedup(inputs[7]),.seg_out(tub_sel_2),.seg_ctrl(segments_auto),.led(light_auto),.note_out(auto_note), .low(auto_low), .high(auto_high));
     Race_Mode race_mode(.enable(en_mode4),.clk(clk),.rst_n(rst),.note(free_note),.switch_song(debounced_song_switch),.user_select(user_select),.light(light_race),.low_light(race_low_light),.high_light(race_high_light),.segments(segments_race),.finished(0), .speaker_note(race_note), .user_display(race_user_display));
@@ -181,7 +187,7 @@ module Controller(
 //user display
     reg [17:0] clk_divider = 0;
     wire slow_clk = clk_divider[17];
-
+    //慢时钟用来显示评级和用户
     always @(posedge clk) begin
         clk_divider <= clk_divider + 1;
     end

@@ -8,7 +8,7 @@ module Adjust_Mode(
     output reg [2:0] adj_addr,
     output reg [7:0] adj_key
 );
-    parameter ADJUST_STATE = 2'b00, PLAY_STATE = 2'b01, FINISH_STATE = 2'b10, a_sec = 100000000;
+    `include "parameter.v"
     reg [1:0] current_state;
     reg [2:0] state_counter;
     reg [7:0] write_enables;
@@ -32,6 +32,7 @@ module Adjust_Mode(
     reg [31:0]time_counter;
     always @(posedge clk, negedge rst_n) begin
         if(!rst_n) begin
+            //保留原始key，为亮灯做准备
             tmp_keys[0] <= 8'b00000000;
             tmp_keys[1] <= 8'b00000001; 
             tmp_keys[2] <= 8'b00000010; 
@@ -50,6 +51,7 @@ module Adjust_Mode(
             write_enables <= 8'b11111111;
             case(current_state)
                 ADJUST_STATE: begin
+                    //等待按键进行调整
                     if(inputs != 8'b0000_0000 && state_counter < 3'b111) begin
                         current_state <= PLAY_STATE;
                         //tmp_keys[state_counter+1] <= inputs;
@@ -66,6 +68,7 @@ module Adjust_Mode(
                     end
                 end
                 PLAY_STATE: begin
+                    //播放对应的声音
                     if (time_counter < a_sec) begin
                         time_counter <= time_counter + 1;
                         note <= {1'b0,state_counter};
@@ -85,6 +88,7 @@ module Adjust_Mode(
                     
                 end
                 FINISH_STATE: begin
+                    //结束
                     note <= 4'b0000;
                     light <= 8'b0000_0000;
                 end
